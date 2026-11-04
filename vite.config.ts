@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  base: './',
+  base: '/upminaa/',
 
   plugins: [
     VitePWA({
@@ -14,15 +14,14 @@ export default defineConfig({
         short_name: 'Upminaa',
         description: 'Sua calculadora de compras offline',
 
-        start_url: './',
-        scope: './',
+        start_url: '/upminaa/',
+        scope: '/upminaa/',
 
         display: 'standalone',
         orientation: 'portrait',
 
         background_color: '#0b0b0d',
         theme_color: '#0b0b0d',
-
         lang: 'pt-BR',
 
         icons: [
