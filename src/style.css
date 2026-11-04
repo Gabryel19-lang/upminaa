@@ -1,0 +1,414 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #080808;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ESTRUTURA PRINCIPAL */
+
+.app {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 30px 20px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      #440909 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      #310606 0%,
+      transparent 40%
+    ),
+    #0b0b0d;
+
+  border-left: 1px solid #461313;
+  border-right: 1px solid #461313;
+}
+
+/* SAKURAS DECORATIVAS */
+
+.app::before {
+  content: "❀ ✿ ❀";
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  font-size: 36px;
+  color: #b41525;
+  opacity: 0.65;
+  transform: rotate(-20deg);
+  pointer-events: none;
+}
+
+.app::after {
+  content: "❀ ✿";
+  position: absolute;
+  bottom: 10px;
+  left: -12px;
+  font-size: 40px;
+  color: #9e1424;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* CABEÇALHO */
+
+header {
+  position: relative;
+  text-align: center;
+  padding: 45px 0 30px;
+  border-bottom: 1px solid #871c25;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 48px;
+  color: #ffffff;
+  margin: 0;
+
+  text-shadow:
+    2px 2px 0 #a80016,
+    0 0 20px #8c111c;
+}
+
+header p {
+  color: #da2738;
+  font-size: 16px;
+  letter-spacing: 4px;
+  margin: 7px 0;
+}
+
+header span {
+  color: #c9c9c9;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* TEMPLO JAPONÊS TORII */
+
+.torii {
+  position: relative;
+  width: 180px;
+  height: 110px;
+  margin: 15px auto 25px;
+  filter: drop-shadow(0 0 12px #8b101c70);
+}
+
+.torii-topo {
+  position: absolute;
+  width: 170px;
+  height: 13px;
+  top: 12px;
+  left: 5px;
+  background: #c51a2b;
+  border-radius: 50% 50% 4px 4px;
+}
+
+.torii-meio {
+  position: absolute;
+  width: 135px;
+  height: 9px;
+  top: 34px;
+  left: 22px;
+  background: #a71925;
+}
+
+.torii-coluna {
+  position: absolute;
+  top: 23px;
+  height: 85px;
+  width: 13px;
+
+  background: linear-gradient(
+    90deg,
+    #650b13,
+    #e12a36,
+    #720b16
+  );
+}
+
+.torii-coluna.esquerda {
+  left: 42px;
+}
+
+.torii-coluna.direita {
+  right: 42px;
+}
+
+.torii-placa {
+  position: absolute;
+  top: 23px;
+  left: 73px;
+  width: 34px;
+  height: 26px;
+  background: #171014;
+  border: 2px solid #9e1b27;
+}
+
+/* SEÇÕES */
+
+section {
+  position: relative;
+  margin-top: 25px;
+  padding: 20px 15px;
+
+  background: rgba(17, 17, 20, 0.95);
+  border: 1px solid #40171b;
+  border-radius: 12px;
+}
+
+h2 {
+  font-size: 17px;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+section h2 {
+  color: #f4f4f4;
+  border-left: 3px solid #d51c2c;
+  padding-left: 10px;
+}
+
+/* CAMPOS */
+
+input {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+
+  background: #171719;
+  color: white;
+
+  border: 1px solid #414145;
+  border-radius: 7px;
+  outline: none;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: #d32131;
+  box-shadow: 0 0 8px #8c152455;
+}
+
+.campos {
+  display: flex;
+  gap: 10px;
+}
+
+.campos input {
+  min-width: 0;
+}
+
+/* BOTÕES */
+
+button {
+  width: 100%;
+  padding: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #8c101c,
+    #d91d30
+  );
+
+  color: white;
+  border: 1px solid #e63240;
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #e02636;
+  box-shadow: 0 0 12px #bd152c66;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* LISTA DE PRODUTOS */
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 13px 0;
+  border-bottom: 1px solid #29292c;
+
+  font-size: 14px;
+}
+
+li span {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.lista-vazia {
+  color: #999;
+  justify-content: center;
+}
+
+.excluir {
+  width: auto;
+  flex-shrink: 0;
+  padding: 8px 12px;
+
+  background: #260d12;
+  color: #ff5460;
+  border: 1px solid #761a27;
+}
+
+/* ORÇAMENTO */
+
+.orcamento-box {
+  border-color: #76222b;
+}
+
+.orcamento-box label {
+  display: block;
+  color: #bcbcbc;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.orcamento-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  margin: 16px 0 10px;
+  color: #bcbcbc;
+  font-size: 13px;
+}
+
+#porcentagem {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.barra-fundo {
+  width: 100%;
+  height: 11px;
+
+  background: #29292d;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#barra-progresso {
+  width: 0%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    #8d1824,
+    #e52b3b
+  );
+
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+#barra-progresso.estourou {
+  background: #ff3344;
+  box-shadow: 0 0 12px #ff334488;
+}
+
+#status-orcamento {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: #aaaaaa;
+}
+
+#status-orcamento.dentro-limite {
+  color: #55c985;
+}
+
+#status-orcamento.acima-limite {
+  color: #ff4555;
+  font-weight: bold;
+}
+
+/* TOTAL DA COMPRA */
+
+footer {
+  position: relative;
+  margin-top: 25px;
+  padding: 22px 18px;
+
+  background: #141416;
+  border: 1px solid #95202b;
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+footer p {
+  color: #aaaaaa;
+  font-size: 13px;
+  margin: 0 0 8px;
+}
+
+footer h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #ff4050;
+}
+
+#limpar {
+  background: #242427;
+  border: 1px solid #7b262e;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 480px) {
+  .app {
+    padding: 20px 14px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  section {
+    padding: 17px 12px;
+  }
+
+  footer h2 {
+    font-size: 25px;
+  }
+
+  .torii {
+    margin-bottom: 15px;
+  }
+}
